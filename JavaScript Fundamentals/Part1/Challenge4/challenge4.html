@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="bill-value-label">Input bill value: </label>
+    <input type="text" name="" id="bill-value">
+    <button id="cal">Calculate total value</button>
+    <span id="total-value"></span>
+    <script>
+
+        // Build a function to calculate
+        function calculateTotalBill(billValue) {
+            var tipVal = (billValue >= 50 && billValue <= 300) ? 0.15 : 0.2;
+            var total = billValue + tipVal * billValue;
+            return "Bill value: " + billValue + "\n" + "Tip value: " + tipVal + "\n" + "Total value: " + total;
+        }
+        // Add event 'click' for button
+        document.getElementById("cal").onclick = () => {
+            // Create variable
+            var billVal = Number(document.getElementById("bill-value").value);
+            // calculate
+            var result = calculateTotalBill(billVal);
+            // Print result
+            console.log(result);
+            document.getElementById("total-value").innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>

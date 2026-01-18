@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Compete
+        // Round1:
+        compete([96, 108, 89], [88, 91, 110]);
+        console.log("\n");
+
+        // Round 2:
+        compete([97, 112, 101], [109, 95, 123]);
+        console.log("\n");
+
+        // Round 3:
+        compete([97, 112, 101], [109, 95, 106])
+        console.log("\n");
+
+        function mean(acc, val) {
+            return acc + val;
+        }
+
+        function compete(Dolphins, Koalas) {
+            var avgDolphin = Dolphins.reduce(mean, 0) / Dolphins.length;
+            var avgKoalas = Koalas.reduce(mean, 0) / Koalas.length;
+
+
+            // const isHigher100Dol = Dolphins.every(ele => ele >= 100);
+            // const isHigher100Koa = Koalas.every(ele => ele >= 100);
+
+            console.log("Dolphin: " + Dolphins);
+            console.log("Koalas: " + Koalas);
+
+            console.log("Dolphin's avg: " + avgDolphin);
+            console.log("Koalas's avg: " + avgKoalas);
+
+            // if (!isHigher100Dol) {
+            //     if (!isHigher100Koa)
+            //         console.log("Both of team has element less than 100!");
+            //     else
+            //         console.log("Koalas wins!");
+            // } else {
+            //     if (!isHigher100Koa)
+            //         console.log("Dolphin wins!");
+            //     else {
+            //         if (avgDolphin == avgKoalas)
+            //             console.log("Draw!");
+            //         else if (avgDolphin > avgKoalas)
+            //             console.log("Dolphin wins!");
+            //         else
+            //             console.log("Koalas wins!");
+            //     }
+            // }
+
+            if (avgDolphin < 100) {
+                if (avgKoalas < 100)
+                    console.log("Both of team has avgpoint less than 100!");
+                else
+                    console.log("Koalas wins!");
+            } else {
+                if (avgKoalas < 100)
+                    console.log("Dolphin wins!");
+                else {
+                    if (avgDolphin > avgKoalas)
+                        console.log("Dolphin wins!");
+                    else if (avgDolphin < avgKoalas)
+                        console.log("koalas wins!");
+                    else
+                        console.log("Draw!");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
