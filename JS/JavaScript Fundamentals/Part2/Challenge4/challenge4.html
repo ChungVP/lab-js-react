@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+
+        var tips = []
+        var totals = []
+
+        function calcTip (billValue){
+            var tipPercent = (billValue >= 50 && billValue <= 300) ? 0.15 : 0.2;
+            var tipValue = billValue * tipPercent;
+            var total = billValue + tipValue;
+            var tip_total = [];
+
+            tip_totals.push(tipValue, total)
+            return tip_total;
+        }
+
+        for (i = 0; i < bills.length; i++){
+            var tipAndTotal = calcTip(bills[i])
+            tips.push(tipAndTotal[0])
+            totals.push(tipAndTotal[1])
+        }
+
+        console.log(tips);
+        console.log(totals);
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tính tiền tip
+        var calcTip = (billValue) => {
+            var tipValue = (billValue >= 50 && billValue <= 300) ? 0.15 : 0.2;
+            var corrTip = billValue * tipValue;
+            return corrTip;
+        }
+
+        var bills = [125, 555, 44];
+        var tips = bills.map(calcTip);
+        var totals = [];
+
+        for (i = 0; i < bills.length; i++){
+            totals.push(bills[i] + tips[i]);
+        }
+
+        // In ra giá trị
+        function display(array){
+           array.forEach((value) => {
+            console.log(value);
+           })
+        }
+
+        display(totals);
+        
+    </script>
+</body>
+</html>

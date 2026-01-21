@@ -6,6 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+
+        // Tính giá trị trung bình
+        function calcAverage(scores){
+            return scores.reduce((acc, val) => {
+                return acc + val;
+            }) / scores.length;
+        }
+
+        function checkWinner(avgDolphin, avgKoalas) {
+            
+            if (avgDolphin > avgKoalas){
+                console.log("Dolphins win ("+ avgDolphin + " vs." + avgKoalas +" )");
+            } else if (avgDolphin > avgKoalas)
+                console.log("Koalas win ("+ avgKoalas + " vs." + avgDolphin +" )");
+            else 
+                console.log("Draw");
+                
+        }
+
+        // Round 1:
+        var Dolphins1 = [44, 23, 71]
+        var Koalas1 = [65, 54, 49]
+        checkWinner(calcAverage(Dolphins1), calcAverage(Koalas1))
+        print("\n")
+
+        // Round 2:
+        var Dolphins2 = [85, 54, 41]
+        var Koalas2 = [23, 34, 27]
+        checkWinner(calcAverage(Dolphins2), calcAverage(Koalas2))
+        print("\n")
+
+
+    </script>
 </body>
 </html>
